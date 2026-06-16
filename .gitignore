@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# MATLAB autosave/backup
+*.asv
+*.m~
+*.autosave
+
+# Simulink generated/cache files
+slprj/
+*.slxc
+*.mex*
+*.mdl.r*
+*.slx.r*
+
+# MATLAB project temp/cache
+*.log
+*.tmp
+
+# Optional generated figures if you do not want to track them
+# Figures/*.png
+# Figures/*.jpg
+# Figures/*.pdf
