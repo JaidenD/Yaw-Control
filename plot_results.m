@@ -18,7 +18,7 @@ plot(delta.Time, rad2deg(delta.Data), 'LineWidth', 1.5);
 grid on;
 xlabel('Time [s]');
 ylabel('Steering angle \delta [deg]');
-title('Steering Input (%s)', caseName);
+title(sprintf('Steering Input (%s)', caseName));
 
 %% Figure 2: Yaw-rate tracking
 figure;
@@ -28,10 +28,9 @@ grid on;
 xlabel('Time [s]');
 ylabel('Yaw rate [rad/s]');
 legend('r_{ref}', 'r', 'Location', 'best');
-title('Yaw-Rate Tracking');
+title(sprintf('Yaw-Rate Tracking (%s)', caseName));
 
 %% Figure 3: Yaw-rate tracking error
-% Interpolate r_ref onto r time-grid if needed
 r_ref_interp = interp1(r_ref.Time, r_ref.Data, r.Time, 'linear', 'extrap');
 e_r = r_ref_interp - r.Data;
 
@@ -40,7 +39,7 @@ plot(r.Time, e_r, 'LineWidth', 1.5);
 grid on;
 xlabel('Time [s]');
 ylabel('Yaw-rate error [rad/s]');
-title('Yaw-Rate Tracking Error (%s)', caseName);
+title(sprintf('Yaw-Rate Tracking Error (%s)', caseName));
 
 %% Figure 4: Sideslip angle
 figure;
@@ -48,7 +47,7 @@ plot(beta.Time, rad2deg(beta.Data), 'LineWidth', 1.5);
 grid on;
 xlabel('Time [s]');
 ylabel('Sideslip angle \beta [deg]');
-title('Vehicle Sideslip Angle (%s)', caseName);
+title(sprintf('Vehicle Sideslip Angle (%s)', caseName));
 
 %% Figure 5: Lateral acceleration
 figure;
@@ -56,7 +55,7 @@ plot(ay.Time, ay.Data, 'LineWidth', 1.5);
 grid on;
 xlabel('Time [s]');
 ylabel('Lateral acceleration a_y [m/s^2]');
-title('Lateral Acceleration (%s)', caseName);
+title(sprintf('Lateral Acceleration (%s)', caseName));
 
 %% Figure 6: Direct yaw moment command
 figure;
@@ -64,7 +63,7 @@ plot(M_z.Time, M_z.Data, 'LineWidth', 1.5);
 grid on;
 xlabel('Time [s]');
 ylabel('Direct yaw moment M_z [N m]');
-title('High-Level Controller Output (%s)', caseName);
+title(sprintf('High-Level Controller Output (%s)', caseName));
 
 %% Figure 7: Wheel torque allocation
 figure;
@@ -74,7 +73,7 @@ grid on;
 xlabel('Time [s]');
 ylabel('Wheel torque [N m]');
 legend('\tau_L', '\tau_R', 'Location', 'best');
-title('Left/Right Torque Allocation, (%s)', caseName);
+title(sprintf('Left/Right Torque Allocation (%s)', caseName));
 
 if savePlots
 
