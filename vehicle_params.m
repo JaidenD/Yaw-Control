@@ -35,21 +35,6 @@ g = 9.81;       % gravitational acceleration [m/s]
 kh = 1.2;       % handling yaw-rate aggressiveness gain [-]
 
 % ---------------------------------------------------------
-% Sideslip correction thresholds
-% ---------------------------------------------------------
-beta_act = deg2rad(3);  % sideslip activation threshold [rad]
-beta_th  = deg2rad(6);  % sideslip upper threshold [rad]
-k1 = 1.0;               % correction gain in transition region [-]
-k2 = 1.0;               % correction gain above threshold [-]
-Delta_a_y_gain = 0.1;    % tuning parameter for sideslip correction [-]
-% ---------------------------------------------------------
-% High-level yaw moment controller
-% ---------------------------------------------------------
-Kp = 3000;      % yaw-rate proportional gain [N*m/(rad/s)]
-Ki = 5000;      % yaw-rate integral gain [N*m/rad]
-Mz_max = 4000;  % max direct yaw moment [N*m]
-
-% ---------------------------------------------------------
 % Simulation settings
 % ---------------------------------------------------------
 Tsim = 10;      % simulation time [s]
