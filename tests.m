@@ -45,10 +45,10 @@ plot_results(out_passive, "passive", savePlots)
 passive = 0;
 use_sideslip_correction = 0;
 out_yaw_only = sim(model);
-plot_results(out_passive, "yawOnly", savePlots)
+plot_results(out_yaw_only, "yawOnly", savePlots)
 
 %% Case C: sideslip-corrected torque vectoring
 passive = 0;
 use_sideslip_correction = 1;
 out_corrected = sim(model);
-plot_results(out_passive, "full", savePlots)
+plot_results(out_corrected, "full", savePlots)
